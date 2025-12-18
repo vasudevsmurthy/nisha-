@@ -45,7 +45,6 @@
             margin: 0 auto;
         }
 
-        /* SIDEBAR */
         .sidebar {
             background: var(--bg-gradient-jet);
             border: 1px solid var(--jet);
@@ -139,7 +138,6 @@
             text-decoration: none;
         }
 
-        /* MAIN CONTENT */
         .main-content {
             flex: 1;
             background: var(--bg-gradient-jet);
@@ -149,12 +147,12 @@
             box-shadow: 0 24px 80px hsla(0, 0%, 0%, 0.25);
         }
 
-        /* NAVBAR */
         .navbar {
             display: flex;
             gap: 20px;
             border-bottom: 1px solid var(--jet);
             margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
         .navbar-link {
@@ -178,7 +176,6 @@
             border-bottom: 2px solid var(--orange-yellow-crayola);
         }
 
-        /* ARTICLE */
         article {
             display: none;
             animation: fadeIn 0.5s;
@@ -217,9 +214,9 @@
             font-size: 0.95rem;
             line-height: 1.8;
             margin-bottom: 25px;
+            text-align: justify;
         }
 
-        /* SERVICE CARDS */
         .service-list {
             display: grid;
             grid-template-columns: 1fr;
@@ -258,7 +255,6 @@
             line-height: 1.7;
         }
 
-        /* TIMELINE */
         .timeline {
             margin-top: 30px;
         }
@@ -311,7 +307,46 @@
             line-height: 1.7;
         }
 
-        /* RESPONSIVE */
+        /* Experience Grid Layout */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .experience-card {
+            background: var(--border-gradient-onyx);
+            padding: 30px;
+            border-radius: 14px;
+            transition: transform 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-card h3 {
+            color: var(--orange-yellow-crayola);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .experience-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .experience-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
         @media (max-width: 968px) {
             main {
                 flex-direction: column;
@@ -325,6 +360,10 @@
 
             .navbar {
                 flex-wrap: wrap;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -342,7 +381,6 @@
 <body>
 
     <main>
-        <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="sidebar-info">
                 <div class="avatar-box">
@@ -391,14 +429,13 @@
             </ul>
         </aside>
 
-        <!-- MAIN CONTENT -->
         <div class="main-content">
-            <!-- NAVBAR -->
             <nav class="navbar">
                 <button class="navbar-link active" data-nav-link onclick="showArticle('about')">About</button>
+                <button class="navbar-link" data-nav-link onclick="showArticle('life-experience')">Life Experience</button>
                 <button class="navbar-link" data-nav-link onclick="showArticle('vladikavkaz')">Vladikavkaz</button>
                 <button class="navbar-link" data-nav-link onclick="showArticle('nosma')">NOSMA</button>
-                <button class="navbar-link" data-nav-link onclick="showArticle('experience')">Experience</button>
+                <button class="navbar-link" data-nav-link onclick="showArticle('journey')">My Journey</button>
             </nav>
 
             <!-- ABOUT ARTICLE -->
@@ -457,6 +494,70 @@
                 </section>
             </article>
 
+            <!-- LIFE EXPERIENCE ARTICLE (NEW PAGE) -->
+            <article class="life-experience" data-page="life-experience">
+                <h2 class="article-title">Life Experience in Vladikavkaz</h2>
+
+                <div class="experience-grid">
+                    <!-- First Impression -->
+                    <div class="experience-card">
+                        <h3>First Impression of the City</h3>
+                        <img src="YOUR-CITY-IMAGE-URL" alt="Vladikavkaz First Impression" style="display: none;">
+                        <p>
+                            When I first arrived in Vladikavkaz, I was immediately struck by the breathtaking view of 
+                            the mountains surrounding the city, and the pleasant atmosphere. The people were warm and 
+                            welcoming, and I noticed a beautiful mix of traditional and modern buildings throughout the 
+                            area. Hearing the Russian language spoken everywhere was both fascinating and motivating as 
+                            I was encouraged to learn Russian. Vladikavkaz is a lively urban city, and I'm glad that 
+                            the NOSMA campus is located right at its heart, offering a lively and enriching environment 
+                            for students.
+                        </p>
+                    </div>
+
+                    <!-- Daily Life -->
+                    <div class="experience-card">
+                        <h3>Daily Life and Routine</h3>
+                        <img src="YOUR-DAILY-LIFE-IMAGE-URL" alt="Daily Life" style="display: none;">
+                        <p>
+                            I live in a comfortable hostel near the academy, which makes it easy to manage my daily 
+                            routine. Each morning, I travel to the academy for classes. In the evening, I enjoy a short break 
+                            for studying or reviewing what I've learned. Meals with friends provide a nice break during 
+                            the day, and in the evening, I like to go for a walk or visit the gym to relax and stay active. 
+                            During my free time, I often visit nearby supermarkets to buy essentials, relax in local cafes 
+                            with classmates, or spend time in the city's peaceful parks and along the river. These moments 
+                            help me balance my academic life with enjoyable experiences in Vladikavkaz.
+                        </p>
+                    </div>
+
+                    <!-- Culture and Food -->
+                    <div class="experience-card">
+                        <h3>Culture and Food</h3>
+                        <img src="YOUR-FOOD-IMAGE-URL" alt="Culture and Food" style="display: none;">
+                        <p>
+                            Living in Vladikavkaz has given me a wonderful chance to experience both Russian and Ossetian 
+                            culture. I enjoy taking part in local festivals and observing traditional customs that reflect 
+                            the warmth and hospitality of the people. Trying local dishes has been an exciting experience, 
+                            with my favorite being Ossetian pies, which are delicious! I've also grown to love the same kind 
+                            of food. I love cooking Indian food with my friends, which helps me share a taste of home and 
+                            exchange our cultures through food.
+                        </p>
+                    </div>
+
+                    <!-- Challenges and Adaptation -->
+                    <div class="experience-card">
+                        <h3>Challenges and Adaptation</h3>
+                        <img src="YOUR-CHALLENGES-IMAGE-URL" alt="Challenges" style="display: none;">
+                        <p>
+                            At first, adjusting to life in Vladikavkaz was a bit challenging because of the cold winters, 
+                            the language barrier, and being far from my family. However, with time, I learned to adapt by 
+                            picking up basic Russian phrases, which made daily communication easier. I also made new friends 
+                            and participated in activities, which helped me feel more connected and comfortable in my new 
+                            environment.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
             <!-- VLADIKAVKAZ ARTICLE -->
             <article class="vladikavkaz" data-page="vladikavkaz">
                 <h2 class="article-title">Life in Vladikavkaz</h2>
@@ -503,15 +604,6 @@
                             </p>
                         </li>
                     </ul>
-                </section>
-
-                <section style="margin-top: 50px;">
-                    <h3 class="article-title" style="font-size: 1.5rem;">Daily Life Experience</h3>
-                    <p class="about-text">
-                        [Add your personal experiences here - describe your typical day, favorite places 
-                        in the city, how you navigate daily life, the weather and seasons, local markets, 
-                        transportation, friendships with locals, etc.]
-                    </p>
                 </section>
             </article>
 
@@ -562,19 +654,10 @@
                         </li>
                     </ul>
                 </section>
-
-                <section style="margin-top: 50px;">
-                    <h3 class="article-title" style="font-size: 1.5rem;">Campus Experience</h3>
-                    <p class="about-text">
-                        [Add details about campus facilities, student life, extracurricular activities, 
-                        study groups, challenges faced, memorable moments, relationships with professors 
-                        and fellow students, etc.]
-                    </p>
-                </section>
             </article>
 
-            <!-- EXPERIENCE ARTICLE -->
-            <article class="experience" data-page="experience">
+            <!-- MY JOURNEY ARTICLE -->
+            <article class="journey" data-page="journey">
                 <h2 class="article-title">My Journey</h2>
 
                 <section class="timeline">
@@ -628,19 +711,16 @@
 
     <script>
         function showArticle(articleName) {
-            // Hide all articles
             const articles = document.querySelectorAll('article');
             articles.forEach(article => {
                 article.classList.remove('active');
             });
 
-            // Show selected article
             const selectedArticle = document.querySelector(`.${articleName}`);
             if (selectedArticle) {
                 selectedArticle.classList.add('active');
             }
 
-            // Update navbar active state
             const navLinks = document.querySelectorAll('.navbar-link');
             navLinks.forEach(link => {
                 link.classList.remove('active');
